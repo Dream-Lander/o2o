@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="o2o.dao.AreaDao">
+<!--    <resultMap id="areaResultMap" type="o2o.entity.Area">
+        <id column="area_id" jdbcType="int" property="areaId"/>
+        <result column="area_name" jdbcType="varchar" property="areaName"/>
+        <result column="create_time" jdbcType="date" property="createTime"/>
+        <result column="last_edit_time" jdbcType="date" property="lastEditTime"/>
+    </resultMap>-->
+    <select id="queryArea"  resultType="o2o.entity.Area">
+        SELECT area_id,area_name,priority,create_time,last_edit_time FROM tb_area order by priority desc
+    </select>
+</mapper>
